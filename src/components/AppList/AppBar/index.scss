@@ -1,0 +1,82 @@
+.apps-bar {
+    margin: 20px 0;
+    height: 40px;
+    line-height: 40px;
+     :global {
+        .ant-radio-group {
+            float: right;
+            padding-right: 15px;
+            font-size: 14px;
+            .ant-radio-button-wrapper {
+                color: black;
+            }
+            .ant-radio-button-wrapper-checked {
+                color: white;
+                background: #1681C4;
+            }
+        }
+    }
+}
+
+.create-app {
+    float: left;
+    height: inherit;
+    font-size: 13px;
+    line-height: inherit;
+}
+
+.sort-app {
+    // background-color: #214D81;
+}
+
+.btn-wrapper {
+    float: right;
+    &>div {
+        display: inline-block;
+    }
+}
+
+.create-app-form-wrap {
+    padding: 20px;
+     :global(.ant-form-item) {}
+}
+
+.create-app-title {
+    line-height: 30px;
+}
+
+.create-app-success-tip {
+    margin: 10px auto 40px auto;
+    text-align: center;
+    line-height: 23px;
+    font-size: 16px;
+    color: #fff;
+    .success-icon {
+        &:before {
+            color: #65da1a
+        }
+    }
+}
+.btn-wrap-success {
+    padding-bottom: 20px;
+    text-align: center;
+    line-height: 35px;
+     :global(.btn) {
+        margin-left: 20px;
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}
+
+.btn-wrap {
+    margin-top: 20px;
+    text-align: center;
+    line-height: 35px;
+     :global(.btn) {
+        margin-left: 20px;
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}
