@@ -12,6 +12,8 @@ let ProductSchema = new mongoose.Schema({
   type: String,                 // 项目系别
   grade: String,                // 项目评级
   logo: String,                 // logo
+  recommend: String,            // 项目推荐分类
+  onLine: String,               // 判断项目上下线
   add_time: String              // 添加时间
 })
 
@@ -28,6 +30,8 @@ ProductSchema.methods.addProduct = function (params, callback) {
     this.type = params.type
     this.grade = params.grade
     this.logo = params.logo
+    this.recommend = params.recommend || '0',
+    this.onLine = params.onLine || '1'
     this.add_time = new Date().getTime()
 
     this.save(callback)

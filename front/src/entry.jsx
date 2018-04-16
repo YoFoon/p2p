@@ -1,15 +1,29 @@
-// declare let module: any;
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import { useStrict, observable, reaction } from 'mobx';
+import axios from 'axios'
+import API from './assets/api'
+import {message} from 'antd'
 
 import { AppContainer } from 'react-hot-loader';
 
 import App from './App';
 
-import 'normalize.css';
+// import 'normalize.css';
+import './assets/common.less'
 
-// useStrict(true);
+axios.defaults.params = { t: +new Date() }
+axios.interceptors.response.use(res => {
+    const code = res.data.errCode
+    if (code === 200) {
+        return res.data.data ? res.data.data : '200'
+    } else {
+        message.error('请求失败')
+    }
+    }, error => {
+    message.error('请求失败')
+})
+window.axios = axios
+window.API = API
 
 // if (process.env.NODE_ENV === 'development') {
 // 
@@ -34,8 +48,3 @@ if (module.hot) {
         render(<NextApp />);
     });
 }
-
-// ReactDOM.render(
-//         <App />,
-//         document.getElementById('react')
-//     );

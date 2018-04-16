@@ -19,7 +19,7 @@ module.exports = webpackMerge(config, {
         ]
     },
     output: {
-        path: '/'
+        path: '/dev'
         // publicPath: '/'
     },
     module: {

@@ -1,6 +1,6 @@
 const Koa = require('koa')
 const router=require('koa-router')()
-// const cors = require('koa-cors')
+const cors = require('koa-cors')
 const logger = require('koa-logger')
 const json = require('koa-json')
 const path = require('path')
@@ -33,7 +33,7 @@ app.use(async (ctx, next) => {
 });
 
 //跨域
-// app.use(cors());
+app.use(cors());
 
 //router
 route(router);

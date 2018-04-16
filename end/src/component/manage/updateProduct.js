@@ -15,6 +15,8 @@ const GetProduct = async ctx => {
   const type = ctx.request.body.type || ''
   const grade = ctx.request.body.grade || ''
   const logo = ctx.request.body.logo || ''
+  const recommend = ctx.request.body.recommend || ''
+  const onLine = ctx.request.body.onLine || ''
 
   const deferred = Q.defer();
 
@@ -49,7 +51,9 @@ const GetProduct = async ctx => {
           return_money,
           type,
           grade,
-          logo
+          logo,
+          recommend,
+          onLine
         }, { 
           multi: true 
         }, err => {

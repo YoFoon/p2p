@@ -10,7 +10,7 @@ module.exports = {
         vendor: [
             'react', 
             'react-dom',
-            'jquery',
+            // 'jquery',
             'lodash',
             'moment',
             'immutable'
@@ -19,14 +19,14 @@ module.exports = {
     },
     plugins: [
         new webpack.ProvidePlugin({
-            $: 'jquery',
+            // $: 'jquery',
             _: 'lodash',
             moment: 'moment',
             cls: 'classnames',
             Immutable: 'immutable'
         }),
         new HtmlWebpackPlugin({
-            title: 'reactts',
+            title: 'p2p',
             filename: 'index.html',
             template: path.resolve(CONST.SRC, './assets/templates/index.html'),
             //favicon: path.resolve(CONST.SRC, './assets/images/favicon.png'),

@@ -10,6 +10,7 @@ const GetProductById = require('../component/front/getProductById')
 const GetProduct1 = require('../component/manage/getProduct')
 const AddProduct = require('../component/manage/addProduct')
 const UpdateProduct = require('../component/manage/updateProduct')
+const GetRecommendProduct = require('../component/front/getRecommendProduct')
 
 
 module.exports = async function(router) {
@@ -20,6 +21,8 @@ module.exports = async function(router) {
   router.post(`${path}/reg`, Reg) // 注册
 
   router.post(`${path}/login`, Login)  // 登录
+
+  router.get(`${path}/get_recommend_product`, GetRecommendProduct) //获取推荐的项目
 
   router.get(`${path}/get_product`, GetProduct) // 获取项目列表
 
