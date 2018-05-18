@@ -8,7 +8,9 @@ import {
     Frame,
     Home,
     Detail,
-    List
+    List,
+    Tool,
+    Admin
 } from './containers';
 // 状态
 // import stores from './stores';
@@ -24,6 +26,8 @@ export default class App extends Component{
                             <Route path="/index" component={Home} />
                             <Route path="/detail" component={Detail} />
                             <Route path="/list" component={List} />
+                            <Route path="/tool" component={Tool} />
+                            <Route path="/admin" component={Admin} />
                         </Switch>
                     </Frame>
                 </HashRouter> 

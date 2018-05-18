@@ -16,14 +16,6 @@ app.use(logger());
 const rootDir = path.resolve(__dirname, '../');
 app.use(require('koa-static')(rootDir + '/html'))
 
-// x-response-time
-app.use(async (ctx, next) => {
-  const start = Date.now();
-  await next();
-  const ms = Date.now() - start;
-  ctx.set('X-Response-Time', `${ms}ms`)
-});
-
 // logger
 app.use(async (ctx, next) => {
   const start = Date.now();
