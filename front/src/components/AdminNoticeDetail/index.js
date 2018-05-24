@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Form, Button} from 'antd'
+import PropTypes from 'prop-types'
 
 import {
   NoticeDetail,
@@ -18,22 +19,27 @@ class Index extends Component {
     store
   }
 
+  static contextTypes = {
+    router: PropTypes.object
+  }
+
   componentDidMount() {
     if (this.props.id){
       this.props.store.getNoticeById(this.props.id)
     }
   }
 
-  onClick = () => {
+  onClick = async () => {
     const {form, id, store} = this.props
     const {getFieldsValue} = form
     const data = getFieldsValue()
     if (id) {
       data.id = id
-      sotre.updateNotice(data)
+      await store.updateNotice(data)
     } else {
-      store.addNotice(data)
+      await store.addNotice(data)
     }
+    this.context.router.history.push('/adminNotice')
   }
 
   render() {
@@ -47,6 +53,7 @@ class Index extends Component {
       formItemLayout,
       noticeDetail
     }
+    console.log(noticeDetail)
     return(
       <div>
         <Title {...diliver} />

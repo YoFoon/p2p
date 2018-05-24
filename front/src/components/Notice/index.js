@@ -1,12 +1,32 @@
 import React, {Component} from 'react'
 
+import {
+  NoticeList
+} from './component/index'
 
-class index extends Component{
+import * as mobx from 'mobx'
+import {observer} from 'mobx-react'
+import Store from './store/notice.store'
+const store = new Store()
+
+@observer
+class Index extends Component {
+  static defaultProps = {
+    store
+  }
+
+  componentDidMount() {
+    this.props.store.getNoticeList()
+  }
+
   render() {
-    return (
-      <div>1</div>
+    const noticeList = mobx.toJS(this.props.store.noticeList)
+    return(
+      <div>
+        <NoticeList list={noticeList} />
+      </div>
     )
   }
 }
 
-export default index
+export default Index

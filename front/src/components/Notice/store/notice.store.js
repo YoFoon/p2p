@@ -1,6 +1,6 @@
 import { observable, action } from 'mobx'
 
-class NoticeStore {
+class AdminNoticeStore {
   @observable noticeList = []
   @observable noticeDetail = {}
 
@@ -29,4 +29,4 @@ class NoticeStore {
   }
 }
 
-export default NoticeStore
+export default AdminNoticeStore

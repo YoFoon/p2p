@@ -5,8 +5,9 @@ import AdminNoticeDetail from '../components/AdminNoticeDetail'
 
 class AdminNoticeDetailWrap extends Component{
   render() {
+    const id = this.props.match.params.id || ''
     return (
-      <AdminNoticeDetail />
+      <AdminNoticeDetail id={id} />
     );
   }
 }

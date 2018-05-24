@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
-import {
-  Notice
-} from '../components/Notice/index'
+import Notice from '../components/Notice/index'
 
 class NoticeWrap extends Component{
   render() {

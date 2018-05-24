@@ -11,7 +11,7 @@ let NoticeSchema = new mongoose.Schema({
 NoticeSchema.methods.addNotice = function (params, callback) {
     this.id = params.id
     this.title = params.title
-    this.content = params.conent
+    this.content = params.content
     this.time = params.time
 
     this.save(callback)

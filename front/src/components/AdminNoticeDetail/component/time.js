@@ -10,7 +10,7 @@ class Title extends Component {
       <FormItem {...formItemLayout} label='时间'>
         {
           getFieldDecorator('time', {
-            initialValue: noticeDetail.title || moment()
+            initialValue: moment(noticeDetail.time) || moment()
           })(
             <DatePicker
               showTime

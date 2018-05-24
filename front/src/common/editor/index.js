@@ -8,7 +8,6 @@ class Index extends Component {
     this.editor = new Simditor(Object.assign({}, {
       textarea: ReactDOM.findDOMNode(this.refs.editor),
     }, this.props.opts));
-
     if (typeof this.props.children === 'string' && this.props.children) {
       this.editor.setValue(this.props.children);
     }
@@ -17,6 +16,11 @@ class Index extends Component {
       const value = this.editor.getValue();
       this.props.onChange && this.props.onChange(value)
     })
+  }
+  componentWillReceiveProps(nextProps){
+    if(this.props.children !== nextProps.children) {
+      this.editor.setValue(nextProps.children);
+    }
   }
   componentWillUnmount () {
     this.editor.destroy();

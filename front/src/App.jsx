@@ -11,6 +11,7 @@ import {
     List,
     Tool,
     Notice,
+    NoticeDetail,
     Admin,
     AdminNotice,
     AdminNoticeDetail
@@ -30,11 +31,12 @@ export default class App extends Component{
                             <Route path="/detail/:id" component={Detail} />
                             <Route path="/list" component={List} />
                             <Route path="/tool" component={Tool} />
+                            <Route path="/notice/:id" component={NoticeDetail} />
                             <Route path="/notice" component={Notice} />
                             <Route path="/admin" component={Admin} />
+                            <Route path="/adminNotice/:id" component={AdminNoticeDetail} />
                             <Route path="/adminNotice" component={AdminNotice} />
                             <Route path="/adminNoticeAdd" component={AdminNoticeDetail} />
-                            <Route path="/adminNotice/:id" component={AdminNoticeDetail} />
                         </Switch>
                     </Frame>
                 </HashRouter> 

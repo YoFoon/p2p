@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class List extends Component{
+class Cooperation extends Component{
   render() {
     return (
       <div>1</div>
@@ -8,4 +8,4 @@ class List extends Component{
   }
 }
 
-export default List
+export default Cooperation
