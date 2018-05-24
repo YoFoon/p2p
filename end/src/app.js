@@ -31,4 +31,11 @@ app.use(cors());
 route(router);
 app.use(router.routes());
 
+// app.use(async (ctx, next) => {
+//   if (ctx.request.method == "OPTIONS") {
+//     ctx.response.status = 200
+//   }
+// });
+
+
 app.listen(8008);

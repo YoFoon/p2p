@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-
+import {
+  Wangdai
+} from './component/index'
 class Index extends Component {
   render() { 
-    return ( <div>
-      1
-    </div> )
+    return ( 
+      <div>
+        <Wangdai />
+      </div> 
+    )
   }
 }
  

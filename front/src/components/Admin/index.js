@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {
-  Form
+  Form,
+  Button
 } from 'antd'
 
 import {
@@ -8,12 +9,27 @@ import {
   Types,
   InputTable,
   CompanyDes,
-  PlateDes
+  PlateDes,
+  Recommend
 } from './component'
 
 import InputConfig from './config/input.config'
+import {observer} from 'mobx-react'
+import Store from './store/admin.store'
+const store = new Store()
 
+@observer
 class Index extends Component {
+  static defaultProps = {
+    store: store
+  }
+
+  add = () => {
+    const data = this.props.form.getFieldsValue()
+    data.rebate = JSON.stringify(data.rebate)
+    data.type = JSON.stringify(data.type)
+    this.props.store.addProduct(data)
+  }
   render() { 
     const formItemLayout = {labelCol: {span: 3}, wrapperCol: {span: 18}}
     const {getFieldDecorator, setFieldsValue, getFieldValue} = this.props.form
@@ -29,7 +45,7 @@ class Index extends Component {
         {
           InputConfig.map( config => {
             return (
-              <Input {...diliver} config = {config} />
+              <Input key={config.code} {...diliver} config = {config} />
             )
           })
         }
@@ -37,6 +53,9 @@ class Index extends Component {
         <InputTable {...diliver} />
         <CompanyDes {...diliver} />
         <PlateDes {...diliver} />
+        <Recommend {...diliver} />
+        <Button type='primary' onClick={this.add}>添加</Button>
+        <Button type='default' onClick={this.cancel}>重置</Button>
       </div> 
     )
   }

@@ -11,9 +11,13 @@ const GetProduct1 = require('../component/manage/getProduct')
 const AddProduct = require('../component/manage/addProduct')
 const UpdateProduct = require('../component/manage/updateProduct')
 const GetRecommendProduct = require('../component/front/getRecommendProduct')
-
+const AddNotice = require('../component/manage/addNotice')
+const UpdateNotice = require('../component/manage/updateNotice')
+const GetNotice = require('../component/front/getNotice')
+const GetNoticeById = require('../component/front/getNoticeById')
 
 module.exports = async function(router) {
+  
   router.get("/", Html)
 
   router.get("/test", Test)
@@ -21,6 +25,14 @@ module.exports = async function(router) {
   router.post(`${path}/reg`, Reg) // 注册
 
   router.post(`${path}/login`, Login)  // 登录
+
+  router.post(`${path1}/add_notice`, AddNotice) // 添加公告
+
+  router.post(`${path1}/update_notice`, UpdateNotice) // 更新公告
+
+  router.get(`${path}/get_notice_list`, GetNotice) // 获取公告列表
+
+  router.get(`${path}/get_notice_by_id`, GetNoticeById) // 获取公告
 
   router.get(`${path}/get_recommend_product`, GetRecommendProduct) //获取推荐的项目
 

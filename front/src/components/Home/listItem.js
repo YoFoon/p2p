@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import {Row, Col} from 'antd'
+import PropTypes from 'prop-types';
 import './style/listItem.less'
 
 class ListItem extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
+  static contextTypes = {
+    router: PropTypes.object
+  }
+  go = (id) => {
+    this.context.router.history.push(`/detail/${id}`)
   }
   render() { 
     const {item, index} = this.props
@@ -36,8 +39,8 @@ class ListItem extends Component {
                         <p className='box-content-content'>{product.investment_time}</p>
                       </Col>
                       <Col span={8}>
-                        <span className='product-type'>{product.type}</span>
-                        <span className='product-grade'>{product.grade}</span>
+                        {/* <span className='product-type'>{product.type}</span>
+                        <span className='product-grade'>{product.grade}</span> */}
                       </Col>
                     </Row>
                     <Row className='box-content'>
@@ -50,7 +53,7 @@ class ListItem extends Component {
                         <p className='box-content-content'>{product.return_money}</p>
                       </Col>
                       <Col span={8}>
-                        <span className='product-btn'>立即投标</span>
+                        <span className='product-btn' onClick={() => {this.go(product.productId)}}>立即投标</span>
                       </Col>
                     </Row>
                   </div> 

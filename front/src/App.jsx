@@ -10,7 +10,10 @@ import {
     Detail,
     List,
     Tool,
-    Admin
+    Notice,
+    Admin,
+    AdminNotice,
+    AdminNoticeDetail
 } from './containers';
 // 状态
 // import stores from './stores';
@@ -24,10 +27,14 @@ export default class App extends Component{
                         <Switch>
                             <Redirect exact from="/" to="/index" />
                             <Route path="/index" component={Home} />
-                            <Route path="/detail" component={Detail} />
+                            <Route path="/detail/:id" component={Detail} />
                             <Route path="/list" component={List} />
                             <Route path="/tool" component={Tool} />
+                            <Route path="/notice" component={Notice} />
                             <Route path="/admin" component={Admin} />
+                            <Route path="/adminNotice" component={AdminNotice} />
+                            <Route path="/adminNoticeAdd" component={AdminNoticeDetail} />
+                            <Route path="/adminNotice/:id" component={AdminNoticeDetail} />
                         </Switch>
                     </Frame>
                 </HashRouter> 

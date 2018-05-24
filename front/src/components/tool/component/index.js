@@ -1,0 +1,1 @@
+export {default as Wangdai} from './wangdai'

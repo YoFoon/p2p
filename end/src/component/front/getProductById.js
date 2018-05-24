@@ -21,7 +21,7 @@ const GetProductById = async ctx => {
         return;
       }
       
-      data.data = item
+      data.data = item[0]
       data.errCode = 200
       deferred.resolve(data);
     } )

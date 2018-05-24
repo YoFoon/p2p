@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {Input, Button} from 'antd'
 class InputTableItem extends Component {
-  onChange = (v, index, type) => {
+  onChange = (e, index, type) => {
     const {value, onChange} = this.props
-    value[index][type] = v
-    onChange && onChange(v)
+    value[index][type] = e.target.value
+    onChange && onChange(value)
   }
   del = index => {
     const {value, onChange} = this.props
@@ -40,11 +40,11 @@ class InputTableItem extends Component {
               return (
                 <tr key={index}>
                   <td>{index + 1}</td>
-                  <td><Input onChange={(e) => {this.onChange(e.taeget.value, index, 'type')}} type='text' value={item.type || ''} /></td>
-                  <td><Input onChange={(e) => {this.onChange(e.taeget.value, index, 'time')}} type='text' value={item.time || ''} /></td>
-                  <td><Input onChange={(e) => {this.onChange(e.taeget.value, index, 'money')}} type='text' value={item.money || ''} /></td>
-                  <td><Input onChange={(e) => {this.onChange(e.taeget.value, index, 'returnMoney')}} type='text' value={item.returnMoney || ''} /></td>
-                  <td><Input onChange={(e) => {this.onChange(e.taeget.value, index, 'rate')}} type='text' value={item.rate || ''} /></td>
+                  <td><Input onChange={(e) => {this.onChange(e, index, 'type')}} type='text' value={item.type || ''} /></td>
+                  <td><Input onChange={(e) => {this.onChange(e, index, 'time')}} type='text' value={item.time || ''} /></td>
+                  <td><Input onChange={(e) => {this.onChange(e, index, 'money')}} type='text' value={item.money || ''} /></td>
+                  <td><Input onChange={(e) => {this.onChange(e, index, 'returnMoney')}} type='text' value={item.returnMoney || ''} /></td>
+                  <td><Input onChange={(e) => {this.onChange(e, index, 'rate')}} type='text' value={item.rate || ''} /></td>
                   <td><span onClick={() => {this.del(index)}}>删除</span></td>
                 </tr>
               )

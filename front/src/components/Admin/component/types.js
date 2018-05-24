@@ -4,10 +4,6 @@ const FormItem = Form.Item
 const { Option, OptGroup } = Select
 
 class Types extends Component {
-  handleChange = (value) => {
-    console.log(value)
-  }
-
   render() { 
     const {getFieldDecorator, formItemLayout, productData} = this.props
     return ( 
@@ -20,7 +16,6 @@ class Types extends Component {
               mode="multiple"
               style={{width: "100%"}}
               placeholder="Please select"
-              onChange={value => {this.handleChange(value)}}
             >
             <OptGroup label="背景">
               <Option value="bj_1">民营系</Option>
