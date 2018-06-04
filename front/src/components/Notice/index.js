@@ -4,6 +4,8 @@ import {
   NoticeList
 } from './component/index'
 
+import './style/index.less'
+
 import * as mobx from 'mobx'
 import {observer} from 'mobx-react'
 import Store from './store/notice.store'

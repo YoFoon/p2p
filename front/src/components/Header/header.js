@@ -4,7 +4,6 @@ import {NavLink as Link } from 'react-router-dom';
 import "./style/content.less";
 
 class Header extends Component {
-
   render() { 
     return ( 
       <div className="header-content-wrap">

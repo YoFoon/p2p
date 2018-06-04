@@ -4,7 +4,7 @@ import Help from './help';
 import Header from './header';
 
 class Index extends Component {
-
+  
   render() { 
     return ( 
       <div className='header'>

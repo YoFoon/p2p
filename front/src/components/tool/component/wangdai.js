@@ -12,6 +12,7 @@ class Wangdai extends Component {
       total2: 0
     }
   }
+
   cal = () => {
     const {getFieldsValue} = this.props.form
     const data = getFieldsValue()

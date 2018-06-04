@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom';
 import {Table} from 'antd'
-import { spawn } from 'child_process';
 
 class NoticeList extends Component {
   onChange = (page) => {
@@ -27,13 +26,13 @@ class NoticeList extends Component {
     }];
     
     return(
-      <div>
+      <div className='notice-list-page-wrap'>
         <Table
-        columns={columns} 
-        dataSource={list}
-        onChange={this.onChange}
-        rowKey={record => record.id}
-      />
+          columns={columns} 
+          dataSource={list}
+          onChange={this.onChange}
+          rowKey={record => record.id}
+        />
       </div>
     )
   }
