@@ -9,9 +9,13 @@ const Reg = async ctx => {
   const username = ctx.request.body.username;
   const password = hash.update(ctx.request.body.password).digest('hex');
   const userId = getUid()
-
   const deferred = Q.defer();
 
+  let body = ctx.request.body
+  Object.assign(body, {
+    username, password,userId
+  }); 
+  console.log(body)
   let data = {
     data: "",
     errCode: 500,
@@ -33,11 +37,7 @@ const Reg = async ctx => {
         return
       }
 
-      SaveUser.addUser({
-        username,
-        password,
-        userId
-      }, err1 => {
+      SaveUser.addUser(body, err1 => {
         if( err1 ) {
           data.meg = err1
           deferred.resolve(data);

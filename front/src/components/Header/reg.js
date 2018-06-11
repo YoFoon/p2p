@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Form, Input, Button, Icon} from 'antd'
 import CryptoJS, {MD5} from 'crypto-js'
 const FormItem = Form.Item
+import API from '../../assets/api'
 
 const formItemLayout = {
   labelCol: {
@@ -45,7 +46,9 @@ class Reg extends Component {
         return
       }
       else {
-
+        axios.post(API.reg, value).then( (data) => {
+          this.props.handleOk()
+        })
       }
     })
   }

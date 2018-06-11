@@ -7,10 +7,18 @@ function hasErrors(fieldsError) {
 }
 
 @Form.create()
-class Reg extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
+class Login extends Component {
+  loginFn = () => {
+    this.props.form.validateFields((err, value) => {
+      if (err) {
+        return
+      }
+      else {
+        axios.post(API.login, value).then( (data) => {
+          this.props.handleOk()
+        })
+      }
+    })
   }
   render() { 
     const { getFieldDecorator, getFieldsError, getFieldError, isFieldTouched } = this.props.form;
@@ -43,8 +51,9 @@ class Reg extends Component {
             type="primary"
             htmlType="submit"
             disabled={hasErrors(getFieldsError())}
+            onClick={this.loginFn}
           >
-            Log in
+            登录
           </Button>
         </FormItem>
       </div>
@@ -52,4 +61,4 @@ class Reg extends Component {
   }
 }
 
-export default Reg
+export default Login

@@ -8,7 +8,7 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: true,
+      visible: false,
       type: ''
     }
     window.operate = this.operate
@@ -19,12 +19,11 @@ class Header extends Component {
       type
     })
   }
-  handleOk = async () => {
-    if (this.state.type === 'reg') {
-      console.log('reg')
-    } else {
-      console.log('login')
-    }
+  handleOk = () => {
+    this.setState({
+      visible: false,
+      type: ''
+    })
     window.location.reload()
   }
   handleCancel = () => {

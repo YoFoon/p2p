@@ -6,6 +6,8 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 const API = {
+  reg: `${path}/reg`,
+  login: `${path}/login`,
   get_recommend_product: `${path}/get_recommend_product`,
   get_product_list: `${path}/get_product`,
   add_product: `${path1}/add_product`,
